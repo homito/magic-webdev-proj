@@ -5,12 +5,12 @@ let _cardPool = [];
 let _deck = [];
 
 
-// Retrieves a sorted list of cards from the card pool, optionally filtered by a search string and types.
+// Retrieves a sorted list of cards from the card pool, filtered by a search string and types.
 function getFilteredCardPool(search, types){
     
 }
 
-// Retrieves a sorted list of cards from the deck, optionally filtered by a search string and types.
+// Retrieves a sorted list of cards from the deck, filtered by a search string and types.
 function getFilteredDeck(search, types){
     
 }
