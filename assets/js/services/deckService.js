@@ -6,14 +6,26 @@ let _deck = [];
 
 
 // Retrieves a sorted list of cards from the card pool, optionally filtered by a search string and types.
-function getCardPool(search = "", types = []){
+function getFilteredCardPool(search, types){
     
 }
 
 // Retrieves a sorted list of cards from the deck, optionally filtered by a search string and types.
-function getDeck(search = "", types = []){
+function getFilteredDeck(search, types){
     
 }
+
+// Retrieves the complete deck.
+function getDeck(){
+
+}
+
+// Retrieves the complete CardPool.
+function getCardPool(){
+
+}
+
+ 
 
 function defaultSort(cards){
     
