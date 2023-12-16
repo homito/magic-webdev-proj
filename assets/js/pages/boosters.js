@@ -25,7 +25,7 @@ function initBoostersPage(){
     }
     ul.insertAdjacentHTML('beforeend', dynamicHTML);
 
-    let boosters = document.querySelectorAll('img');
+    let boosters = document.querySelectorAll('img[data-booster]');
     boosters.forEach(booster => booster.addEventListener('click', openBooster));
 }
 
