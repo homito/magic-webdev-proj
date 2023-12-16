@@ -8,7 +8,7 @@ let _unopendBoosters = [];
 
 const _MAX_BOOSTER_VERSIONS = 3;
 
-let currentSet = config.default_set; // todo: get this from the form
+let _currentSet = config.default_set; // todo: get this from the form
 
 
 // ## GIVEN ##
@@ -21,7 +21,7 @@ function initBoostersPage(){
 
     let dynamicHTML = '';
     for (let boosterIndex = 0; boosterIndex < _unopendBoosters.length; boosterIndex++) {
-        dynamicHTML += `<li><img src="images/${currentSet}/booster_v${_unopendBoosters[boosterIndex]}.jpg" alt="booster" title="booster" data-booster="${boosterIndex+1}" data-open="0"></li>`;
+        dynamicHTML += `<li><img src="images/${_currentSet}/booster_v${_unopendBoosters[boosterIndex]}.jpg" alt="booster" title="booster" data-booster="${boosterIndex+1}" data-open="0"></li>`;
     }
     ul.insertAdjacentHTML('beforeend', dynamicHTML);
 
@@ -38,8 +38,8 @@ function initBoosters(nbBoosters) {
     console.log(_unopendBoosters);
 }
 
-function getCurrentSet(set) {
-    currentSet = set;
+function getcurrentSet(set) {
+    _currentSet = set;
 }
 
 function openBooster(e) {
@@ -48,5 +48,7 @@ function openBooster(e) {
 
     const target = e.target;
     target.dataset.open = 1;
-    target.src = `images/${currentSet}/booster_v0.jpg`;
+    target.src = `images/${_currentSet}/booster_v0.jpg`;
+
+
 }
