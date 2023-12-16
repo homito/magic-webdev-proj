@@ -14,13 +14,26 @@ let currentSet = config.default_set; // todo: get this from the form
 // ## GIVEN ##
 
 function initBoostersPage(){
-    
+    const section = document.querySelector('#boosters');
+    navigateToPage(section);
+
+    const ul = section.querySelector('ul');
+
+    let dynamicHTML = '';
+    for (let boosterIndex = 0; boosterIndex < _unopendBoosters.length; boosterIndex++) {
+        dynamicHTML += `<li><img src="images/${currentSet}/booster_v${_unopendBoosters[boosterIndex]}.jpg" alt="booster" title="booster" data-booster="${boosterIndex+1}" data-open="0"></li>`;
+    }
+    ul.insertAdjacentHTML('beforeend', dynamicHTML);
 }
 
 
 // ## YOUR ADDED FUNCTIONS ##
-
-
+function initBoosters(nbBoosters) {
+    for (let boosterIndex = 0; boosterIndex < nbBoosters; boosterIndex++) {
+        _unopendBoosters.push(getRandomNumber(_MAX_BOOSTER_VERSIONS, 1));
+    }
+    console.log(_unopendBoosters);
+}
 
 function getCurrentSet(set) {
     currentSet = set;
