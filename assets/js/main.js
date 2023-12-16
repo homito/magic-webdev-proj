@@ -4,4 +4,5 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init(){      
      initNavigation();
+     initSubscribePage();
 }
