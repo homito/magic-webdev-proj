@@ -42,7 +42,10 @@ function getCardListByRarity(){
 }
 
 function isBasicLand(card){
-    
+    if (card.type_line.includes('Basic Land')){
+        return true;
+    }
+    return false;
 }
 
 //  Retrieves all basic land cards from _cards.
