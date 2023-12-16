@@ -46,6 +46,10 @@ function openBooster(e) {
     const errorMessages = [];
 
     const target = e.target;
+    
+    if (target.dataset.open === '1')
+        return "Booster already opened";
+
     target.dataset.open = 1;
     target.src = `images/${currentSet}/booster_v0.jpg`;
 
