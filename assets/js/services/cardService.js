@@ -11,7 +11,9 @@ let _rarityList;
 
 // Loads a set of cards into the _cards array
 function loadSet(set){
-    
+    set.forEach(card => {
+        _cards.push(card);
+    });
 }
 
 // Retrieves the current list of cards stored in _cards.
