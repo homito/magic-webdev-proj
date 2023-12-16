@@ -49,5 +49,26 @@ function openBooster(e) {
     target.dataset.open = 1;
     target.src = `images/${currentSet}/booster_v0.jpg`;
 
+    const set = getBooster();
+    displayBooster(set);
+    loadSet(set);
+}
 
+function displayBooster(set) {
+    const ul = document.querySelector('#openedBooster');
+    ul.innerHTML = '';
+
+    let dynamicHTML = '';
+    for (let cardIndex = 0; cardIndex < set.length; cardIndex++) {
+        const card = findCardById(set[cardIndex]);
+        dynamicHTML += `
+        <li><img class="card"
+        src="${card.image}"
+        alt="${card.name}" title="${card.name}"
+        data-id="${card.id}"
+        data-sequence-id="${cardIndex}">
+        </li>
+        `;
+    }
+    ul.insertAdjacentHTML('beforeend', dynamicHTML);
 }
