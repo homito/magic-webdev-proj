@@ -33,7 +33,7 @@ function createRadioButtons() {
 
 function createBoosterInput() {
     let boosterHTML = `
-    <input type="number" id="booster" name="booster" min="1" max="10" value="${config.default_nr_of_boosters}">
+    <input type="number" id="booster" name="booster" min="4" max="10" value="${config.default_nr_of_boosters}">
     `;
     return boosterHTML;
 }
