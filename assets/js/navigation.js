@@ -20,3 +20,11 @@ function initRandomBackground(){
     const classes = ['background-01', 'background-02', 'background-03'];
     document.body.classList.add(getRandomListItem(classes));
 }
+
+function showPage(sectionId){
+    sectionId.classList.remove('hidden');
+}
+
+function hidePage(sectionId){
+    sectionId.classList.add('hidden');
+}
