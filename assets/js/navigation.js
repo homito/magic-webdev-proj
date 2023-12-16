@@ -19,6 +19,7 @@ function navigateToPage(targetId){
 // ## YOUR ADDED FUNCTIONS ##
 function initRandomBackground(){
     const classes = ['background-01', 'background-02', 'background-03'];
+    document.body.classList.remove(...classes);
     document.body.classList.add(getRandomListItem(classes));
 }
 
