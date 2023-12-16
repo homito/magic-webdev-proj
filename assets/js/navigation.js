@@ -11,6 +11,7 @@ function navigate(e){
 }
 
 function navigateToPage(targetId){
+    initRandomBackground();
     hidePage(document.querySelector('section:not(.hidden)'));
     showPage(targetId);
 }
