@@ -17,7 +17,7 @@ function initBoostersPage(){
     const section = document.querySelector('#boosters');
     navigateToPage(section);
 
-    const ul = section.querySelector('ul');
+    const ul = section.querySelector('#unopenedBoosters');
 
     let dynamicHTML = '';
     for (let boosterIndex = 0; boosterIndex < _unopendBoosters.length; boosterIndex++) {
