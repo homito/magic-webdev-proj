@@ -23,6 +23,11 @@ function getCards(){
 
 // Searches for a card by its ID in the _cards array. If found, returns the card object; otherwise, returns null.
 function findCardById(id){
+    for(set in config.sets) {
+        if (_allCards[set].find(card => card.id === id) != undefined){
+            return _allCards[set].find(card => card.id === id);
+        }
+    }    
 }
 
 
