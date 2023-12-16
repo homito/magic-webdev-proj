@@ -24,6 +24,9 @@ function initBoostersPage(){
         dynamicHTML += `<li><img src="images/${currentSet}/booster_v${_unopendBoosters[boosterIndex]}.jpg" alt="booster" title="booster" data-booster="${boosterIndex+1}" data-open="0"></li>`;
     }
     ul.insertAdjacentHTML('beforeend', dynamicHTML);
+
+    let boosters = document.querySelectorAll('img');
+    boosters.forEach(booster => booster.addEventListener('click', openBooster));
 }
 
 
@@ -37,4 +40,13 @@ function initBoosters(nbBoosters) {
 
 function getCurrentSet(set) {
     currentSet = set;
+}
+
+function openBooster(e) {
+    e.preventDefault();
+    const errorMessages = [];
+
+    const target = e.target;
+    target.dataset.open = 1;
+    target.src = `images/${currentSet}/booster_v0.jpg`;
 }
