@@ -27,13 +27,27 @@ function findCardById(id){
 // Generates a booster pack of cards based on a predefined structure from the config object. It selects unique and random cards based on rarity and adds them to the booster pack.
 // An array of (unqiue and random) card objects representing a booster pack.
 function getBooster(){
+    let cards = [];
+    for (let i = 0; i < Object.keys(config.booster.structure).length; i++) {
+        getRandomCards(Object.keys(config.booster.structure)[i], Object.values(config.booster.structure)[i]).forEach(card => {
+            cards.push(card);
+        });
+    }
     
+    return cards;
 }
 
 // Selects a random set of cards based on rarity. It ensures that no duplicates or basic land  are included .
 function getRandomCards(rarity, nrOfCards){
-
-    
+    let cards = [];
+    let currentCard;
+    for (let cardIndex = 0; cardIndex < nrOfCards; cardIndex++) {
+        do {
+            currentCard = getRandomListItem(_allCards[currentSet].filter(card => card.rarity === 'common'));
+        } while (cards.includes(currentCard.id) || isBasicLand(currentCard));
+        cards.push(currentCard.id);
+    }
+    return cards;
 }
 
 // Organizes all cards from _cards by their rarity. If this has been done before, it returns the previously created list.
