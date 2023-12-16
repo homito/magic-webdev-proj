@@ -23,7 +23,7 @@ function createRadioButtons() {
     let radioHTML = "";
     for (const key in config.sets) {
         radioHTML += `<input type="radio" id="set-${key}" name="set" value="${key}"`;
-        if (key == config.default_set) {
+        if (key === config.default_set) {
             radioHTML += 'checked>';
         }
         radioHTML += `<label for="set-${key}">${config.sets[key]}</label>`;

@@ -12,10 +12,13 @@ function navigate(e){
     const target = e.target;
     const targetData = new FormData(target);
 
-    if(target.id == 'subscribe') { // todo : check if input is valid
+    if(target.id === 'subscribe') { // todo : check if input is valid
         initBoosters(targetData.get('booster'));
         getCurrentSet(targetData.get('set'));
         initBoostersPage();
+    }
+    if(target.id === 'boosters') {
+        initCardsPage();
     }
 }
 
