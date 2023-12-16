@@ -10,9 +10,10 @@ function navigate(e){
     e.preventDefault();
     const errorMessages = [];
     const target = e.target;
-    const targetData = new FormData(target);
+    
 
     if(target.id === 'subscribe') { // todo : check if input is valid
+        const targetData = new FormData(target);
         initBoosters(targetData.get('booster'));
         getCurrentSet(targetData.get('set'));
         initBoostersPage();
