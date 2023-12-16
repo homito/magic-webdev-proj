@@ -1,7 +1,8 @@
 // ## GIVEN ##
 
-function  initDeckbuildingPage(){
-
+function initDeckbuildingPage(){
+    const section = document.querySelector('#deck-building');
+    navigateToPage(section);
 }
 
 function renderCardPool(){
