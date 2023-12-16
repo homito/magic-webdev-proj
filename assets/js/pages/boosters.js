@@ -35,7 +35,6 @@ function initBoosters(nbBoosters) {
     for (let boosterIndex = 0; boosterIndex < nbBoosters; boosterIndex++) {
         _unopendBoosters.push(getRandomNumber(_MAX_BOOSTER_VERSIONS, 1));
     }
-    console.log(_unopendBoosters);
 }
 
 function getCurrentSet(set) {
