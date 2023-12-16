@@ -2,7 +2,7 @@
 
 function initSubscribePage() {
     const section = document.querySelector('#subscribe');
-    section.classList.remove('hidden');
+    navigateToPage(section);
 
     const form = section.querySelector('form');
     
