@@ -18,8 +18,9 @@ function navigate(e){
         getCurrentSet(targetData.get('set'));
         initBoostersPage();
     }
-    if(target.id === 'boosters') {
-        initCardsPage();
+    else if(target.id === 'boosters') {
+        console.log('boosters');
+        initDeckbuildingPage();
     }
 }
 
