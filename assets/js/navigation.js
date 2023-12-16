@@ -11,7 +11,8 @@ function navigate(e){
 }
 
 function navigateToPage(targetId){
-
+    hidePage(document.querySelector('section:not(.hidden)'));
+    showPage(targetId);
 }
 
 
