@@ -38,7 +38,7 @@ function initBoosters(nbBoosters) {
     console.log(_unopendBoosters);
 }
 
-function getcurrentSet(set) {
+function getCurrentSet(set) {
     currentSet = set;
 }
 
