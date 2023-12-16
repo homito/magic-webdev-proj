@@ -7,7 +7,13 @@ function initNavigation(){
 }
 
 function navigate(e){
+    e.preventDefault();
+    const errorMessages = [];
+    const target = e.target;
+    const targetData = new FormData(target);
 
+    if(target.id == 'subscribe') // todo : check if input is valid
+        navigateToPage(document.querySelector('#boosters'));
 }
 
 function navigateToPage(targetId){
