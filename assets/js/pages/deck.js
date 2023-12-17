@@ -1,4 +1,4 @@
-let _search = '';
+let _searchPool = '';
 // ## GIVEN ##
 
 function initDeckbuildingPage(){
@@ -59,7 +59,7 @@ function searchFilterInPool(e) {
     e.preventDefault();
     const errorMessages = [];
 
-    _search = e.target.value;
+    _searchPool = e.target.value;
 
     renderCardPool();
 }
