@@ -11,26 +11,26 @@ function navigate(e){
     const errorMessages = [];
     const target = e.target;
     
-
-    if(target.id === 'subscribe') { // todo : check if input is valid
+    if(target.tagName === 'FORM') { // todo : check if input is valid
         const targetData = new FormData(target);
         subscriptionData = targetData;
         initBoosters(targetData.get('booster'));
         getCurrentSet(targetData.get('set'));
         initBoostersPage();
     }
-    else if(target.id === 'boosters') {
-        finishBooster();
+    else if(target.dataset.target === 'deck-building') {
+        if(target.tagName === 'BUTTON')
+            finishBooster();
         initDeckbuildingPage();
     }
-    else if(target.id === 'deck-building' && target.dataset.target === 'stats') {
+    else if(target.dataset.target === 'stats') {
         initStatsPage();
     }
-    else if(target.id === 'deck-building' && target.dataset.target === 'thanks') {
+    else if(target.dataset.target === 'thanks') {
         initThankYouPage();
     }
-    else if(target.id === 'stats') {
-        initDeckbuildingPage();
+    else {
+        console.log('error');
     }
 }
 
