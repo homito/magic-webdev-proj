@@ -93,7 +93,11 @@ function filterCardsByType(cards, types){
     for (card in cards) {
         let isOfType = false;
         for (type in types) {
-            if (cards[card].type_line.includes(types[type])){
+            if (types[type] === '') {
+                if (cards[card].type_line.includes('Land'))
+                    isOfType = true;
+            }
+            else if (cards[card].type_line.includes(types[type])){
                 isOfType = true;
             }
         }
