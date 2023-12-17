@@ -209,3 +209,11 @@ function getManasCountPercentages() {
     manas.colorless = Math.round(manas.colorless / total * 100);
     return manas;
 }
+
+function getBasicLandsInPool() {
+    let basicLands = [];
+    for (card in _allCards[subscriptionData.get('set')]) {
+        if (_allCards[subscriptionData.get('set')][card].type_line.includes('Basic Land'))
+            _cardPool.push(_allCards[subscriptionData.get('set')][card]);
+    }
+}
