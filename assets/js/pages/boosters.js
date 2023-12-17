@@ -63,7 +63,7 @@ function displayBooster(set) {
     ul.innerHTML = '';
 
     for (let cardIndex = 0; cardIndex < set.length; cardIndex++) {
-        const card = findCardById(set[cardIndex]);
+        const card = findCardInAllCardsById(set[cardIndex]);
         const li = document.createElement('li');
         li.innerHTML = displayCard(card);
         li.setAttribute('data-sequence-id', cardIndex);

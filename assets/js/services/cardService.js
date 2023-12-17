@@ -86,3 +86,12 @@ function displayCard(card) {
     
     return dynamicHTML;
 }
+
+function findCardInAllCardsById(id){
+    for(set in config.sets) {
+        if (_allCards[set].find(card => card.id === id) != undefined){
+            return _allCards[set].find(card => card.id === id);
+        }
+    }
+    return null;
+}
