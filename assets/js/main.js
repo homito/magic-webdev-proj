@@ -13,8 +13,3 @@ function init(){
      initNavigation();
      initSubscribePage();
 }
-
-function dothing() {
-     alert("QUACK");
-     console.log("a magnificent space duck has appeared");
-}
