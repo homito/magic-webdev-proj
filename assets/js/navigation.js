@@ -19,7 +19,6 @@ function navigate(e){
         initBoostersPage();
     }
     else if(target.id === 'boosters') {
-        console.log('boosters');
         finishBooster();
         initDeckbuildingPage();
     }
