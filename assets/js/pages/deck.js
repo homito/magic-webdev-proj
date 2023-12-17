@@ -1,3 +1,4 @@
+let _search = '';
 // ## GIVEN ##
 
 function initDeckbuildingPage(){
@@ -50,5 +51,7 @@ function moveCardToPool(e){
 
 // ## YOUR ADDED FUNCTIONS ##
 function searchFilter(e) {
-    console.log(e.target.value);
+    _search = e.target.value;
+
+    renderCardPool();
 }
