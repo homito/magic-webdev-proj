@@ -69,6 +69,9 @@ function renderDeck(){
     cardImg.forEach((card) => {
         card.addEventListener('dblclick', moveCardToPool);
     });
+
+    //display the nb of cards in the deck
+    document.querySelector('.deck h3').innerHTML = `Deck ${deck.length}`;
 }
 
 function renderDeckZones(){
