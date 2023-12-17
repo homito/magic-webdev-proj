@@ -46,7 +46,11 @@ function getCardFromPool(cardId){
 }
 
 function getCardFromDeck(cardId){
-    
+    _cardPool.forEach(card => {
+        if (card.id === cardId){
+            return card;
+        }
+    });
 }
 
 function moveCardFromPoolToDeck(cardId){
