@@ -61,11 +61,29 @@ function showCardDetail(e){
 }
 
 function moveCardToDeck(e){
+    e.preventDefault();
+    const errorMessages = [];
 
+    const target = e.target;
+    const cardId = target.dataset.id;
+
+    moveCardFromPoolToDeck(cardId);
+    renderCardPool();
+    renderDeck();
+    renderDeckZones();
 }
 
 function moveCardToPool(e){
-    
+    e.preventDefault();
+    const errorMessages = [];
+
+    const target = e.target;
+    const cardId = target.dataset.id;
+
+    moveCardFromDeckToPool(cardId);
+    renderCardPool();
+    renderDeck();
+    renderDeckZones();
 }
 
 

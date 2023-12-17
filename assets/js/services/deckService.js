@@ -59,12 +59,24 @@ function getCardFromDeck(cardId){
 }
 
 function moveCardFromPoolToDeck(cardId){
-    
+    for(card in _cardPool) {
+        if (_cardPool[card].id === cardId){
+            _deck.push(_cardPool[card]);
+            _cardPool.splice(card, 1);
+            return;
+        }
+    }
     
 }
 
 function moveCardFromDeckToPool(cardId){
-    
+    for(card in _deck) {
+        if (_deck[card].id === cardId){
+            _cardPool.push(_deck[card]);
+            _deck.splice(card, 1);
+            return;
+        }
+    }    
 }
 
 function getCreatureCount(){
