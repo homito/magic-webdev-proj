@@ -14,6 +14,7 @@ function navigate(e){
 
     if(target.id === 'subscribe') { // todo : check if input is valid
         const targetData = new FormData(target);
+        subscriptionData = targetData;
         initBoosters(targetData.get('booster'));
         getCurrentSet(targetData.get('set'));
         initBoostersPage();

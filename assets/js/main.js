@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', init);
 
+let subscriptionData; // global variable to store the data from the form
+
 function init(){      
      document.querySelector('#subscribe').addEventListener('submit', navigate);
      document.querySelector('#boosters button').addEventListener('click', navigate);
