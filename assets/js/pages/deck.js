@@ -65,6 +65,9 @@ function renderDeck(){
 
     let cardImg = document.querySelectorAll('.deck .card');
     cardImg.forEach((card) => {
+        card.addEventListener('mouseover', showCardDetail);
+    });
+    cardImg.forEach((card) => {
         card.addEventListener('dblclick', moveCardToPool);
     });
 }
