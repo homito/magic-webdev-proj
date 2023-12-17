@@ -1,7 +1,7 @@
 let _searchPool = '';
-let _typesPool = config.mana_types;
+let _typesPool = Array.from(config.mana_types);
 let _searchDeck = '';
-let _typesDeck = config.mana_types;
+let _typesDeck = Array.from(config.mana_types);
 
 // ## GIVEN ##
 
