@@ -19,8 +19,10 @@ function navigate(e){
         initBoostersPage();
     }
     else if(target.dataset.target === 'deck-building') {
-        if(target.tagName === 'BUTTON')
+        if(target.tagName === 'BUTTON') {
             finishBooster();
+            addCardsToCardPool(getCards());
+        }
         initDeckbuildingPage();
     }
     else if(target.dataset.target === 'stats') {
