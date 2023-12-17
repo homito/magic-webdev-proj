@@ -106,7 +106,7 @@ function filterCardsBySearch(cards, search){
     // search text within name, rarity, full type_line, oracle text
     let filteredCards = [];
     for (card in cards){
-        if (cards[card].name.includes(search) || cards[card].rarity.includes(search) || cards[card].type_line.includes(search) || cards[card].card_face.oracle_text.includes(search)){
+        if (cards[card].name.toLowerCase().includes(search.toLowerCase()) || cards[card].rarity.toLowerCase().includes(search.toLowerCase()) || cards[card].type_line.toLowerCase().includes(search.toLowerCase()) || cards[card].card_face.oracle_text.toLowerCase().includes(search.toLowerCase())){
             filteredCards.push(cards[card]);
         }
     }
