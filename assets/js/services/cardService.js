@@ -24,8 +24,8 @@ function getCards(){
 // Searches for a card by its ID in the _cards array. If found, returns the card object; otherwise, returns null.
 function findCardById(id){
     for(card in _cards) {
-        if (card.id === id){
-            return card;
+        if (_cards[card] === id){
+            return findCardInAllCardsById(id);
         }
     }
     return null;
