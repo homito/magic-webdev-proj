@@ -23,8 +23,6 @@ function initDeckbuildingPage(){
 }
 
 function renderCardPool(){
-    //display the nb of cards in the pool
-
     //display the cards in the pool
     const ul = document.querySelector('.container.cards.scrollable');
     ul.innerHTML = '';
@@ -37,6 +35,9 @@ function renderCardPool(){
         li.setAttribute('data-sequence-id', card);
         ul.appendChild(li);
     }
+
+    //display the nb of cards in the pool
+    document.querySelector('h3').innerHTML = `Card pool ${cards.length}`;
 }
 
 function renderDeck(){
