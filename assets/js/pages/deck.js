@@ -4,8 +4,8 @@ let _searchPool = '';
 function initDeckbuildingPage(){
     document.querySelector('#search-pool').addEventListener('input', searchFilterInPool);
     document.querySelector('#search-deck').addEventListener('input', searchFilterInDeck);
-    let mana = document.querySelectorAll('.card-pool button.mana');
-    mana.forEach((button) => {
+    let manaPool = document.querySelectorAll('.card-pool button.mana');
+    manaPool.forEach((button) => {
         button.addEventListener('click', typeFilterInPool);
     });
 
