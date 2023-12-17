@@ -74,10 +74,11 @@ function moveCardFromPoolToDeck(cardId){
 function moveCardFromDeckToPool(cardId){
     for(card in _deck) {
         if (_deck[card].id === cardId){
-            console.log(_deck[card]);
             if (_deck[card].type_line.includes('Basic Land')) {
+                _deck.splice(card, 1);
                 return;
             }
+            _deck.splice(card, 1);
             _cardPool.push(_deck[card]);
             return;
         }
@@ -160,6 +161,7 @@ function filterCards(cards, search, types){
 }
 
 function filterCardsByType(cards, types){
+    // todo : fix this function, some cards are not displayed
     let filteredCards = [];
     for (card in cards) {
         let isOfType = false;
