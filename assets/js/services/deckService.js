@@ -22,7 +22,7 @@ function getFilteredDeck(search, types){
 
 // Retrieves the complete deck.
 function getDeck(){
-
+    return _deck;
 }
 
 // Retrieves the complete CardPool.
