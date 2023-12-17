@@ -159,9 +159,11 @@ function typeFilterInDeck(e) {
 
     if (target.classList.value.includes('selected')) {
         target.classList.remove('selected');
+        _typesDeck.splice(_typesDeck.indexOf(target.dataset.mana), 1);
     }
     else {
         target.classList.add('selected');
+        _typesDeck.push(target.dataset.mana);
     }
 
     renderDeck();
