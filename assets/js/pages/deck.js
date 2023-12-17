@@ -76,4 +76,6 @@ function typeFilterInPool(e) {
     else {
         target.classList.add('selected');
     }
+
+    renderCardPool();
 }
