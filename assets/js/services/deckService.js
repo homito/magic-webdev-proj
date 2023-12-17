@@ -80,8 +80,8 @@ function moveCardFromDeckToPool(cardId){
                 _deck.splice(card, 1);
                 return;
             }
-            _deck.splice(card, 1);
             _cardPool.push(_deck[card]);
+            _deck.splice(card, 1);
             return;
         }
     }    
