@@ -20,6 +20,7 @@ function navigate(e){
     }
     else if(target.id === 'boosters') {
         console.log('boosters');
+        finishBooster();
         initDeckbuildingPage();
     }
 }

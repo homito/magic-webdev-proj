@@ -76,3 +76,14 @@ function displayBooster(set) {
     }
     ul.insertAdjacentHTML('beforeend', dynamicHTML);
 }
+
+function finishBooster() {
+    // function that opens all boosters that are not opened yet when changing to deck page
+    const boosters = document.querySelectorAll('img[data-booster]');
+    for (const booster of boosters) {
+        if (booster.dataset.open === '0') {
+            loadSet(getBooster());
+            booster.dataset.open = 1;
+        }
+    }
+}
