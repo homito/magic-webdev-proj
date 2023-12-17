@@ -20,6 +20,7 @@ function navigate(e){
     }
     else if(target.dataset.target === 'deck-building') {
         if(target.tagName === 'BUTTON') {
+            getBasicLandsInPool();
             finishBooster();
             addCardsToCardPool(getCards());
         }
