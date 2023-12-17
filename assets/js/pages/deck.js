@@ -2,10 +2,10 @@ let _search = '';
 // ## GIVEN ##
 
 function initDeckbuildingPage(){
-    document.querySelector('#search-pool').addEventListener('input', searchFilter);
+    document.querySelector('#search-pool').addEventListener('input', searchFilterInPool);
     let mana = document.querySelectorAll('button.mana');
     mana.forEach((button) => {
-        button.addEventListener('click', typeFilter);
+        button.addEventListener('click', typeFilterInPool);
     });
 
     const section = document.querySelector('#deck-building');
@@ -55,7 +55,7 @@ function moveCardToPool(e){
 
 
 // ## YOUR ADDED FUNCTIONS ##
-function searchFilter(e) {
+function searchFilterInPool(e) {
     e.preventDefault();
     const errorMessages = [];
 
@@ -64,7 +64,7 @@ function searchFilter(e) {
     renderCardPool();
 }
 
-function typeFilter(e) {
+function typeFilterInPool(e) {
     e.preventDefault();
     const errorMessages = [];
 
