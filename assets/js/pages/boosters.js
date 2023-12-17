@@ -8,7 +8,7 @@ let _unopendBoosters = [];
 
 const _MAX_BOOSTER_VERSIONS = 3;
 
-let currentSet = config.default_set; // todo: get this from the form
+let currentSet = config.default_set;
 
 
 // ## GIVEN ##
