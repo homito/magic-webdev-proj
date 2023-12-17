@@ -35,7 +35,7 @@ function navigate(e){
 
 function navigateToPage(targetId){
     initRandomBackground();
-    hidePage(document.querySelector('section:not(.hidden)'));
+    hidePages(document.querySelectorAll('main>section'));
     showPage(targetId);
 }
 
