@@ -17,7 +17,12 @@ function getFilteredCardPool(search, types){
 
 // Retrieves a sorted list of cards from the deck, filtered by a search string and types.
 function getFilteredDeck(search, types){
-    
+    if (types.length === 0)
+        return [];
+    else if (search === '')
+        return filterCardsByType(_deck, types);
+    else
+        return filterCards(_deck, search, types);
 }
 
 // Retrieves the complete deck.

@@ -49,7 +49,7 @@ function renderCardPool(){
 }
 
 function renderDeck(){
-    const deck = getDeck();
+    const deck = getFilteredDeck(_searchDeck, _typesDeck);
 
     const zones = document.querySelectorAll('.deck ul');
     for (zone in zones) {
