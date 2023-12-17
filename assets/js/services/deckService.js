@@ -80,15 +80,33 @@ function moveCardFromDeckToPool(cardId){
 }
 
 function getCreatureCount(){
-    
+    let count = 0;
+    _deck.forEach(card => {
+        if (card.type_line.includes('Creature')){
+            count++;
+        }
+    });
+    return count;
 }
 
 function getLandCount(){
-    
+    let count = 0;
+    _deck.forEach(card => {
+        if (card.type_line.includes('Land')){
+            count++;
+        }
+    });
+    return count;
 }
 
 function getNoneCreatureNoneLandCount(){
-    
+    let count = 0;
+    _deck.forEach(card => {
+        if (!card.type_line.includes('Land') && !card.type_line.includes('Creature')){
+            count++;
+        }
+    });
+    return count;
 }
 
 // Counts the occurrence of each mana type in the deck.
