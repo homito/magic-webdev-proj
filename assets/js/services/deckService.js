@@ -32,7 +32,9 @@ function defaultSort(cards){
 }
 
 function addCardsToCardPool(cards){
-    
+    cards.forEach(card => {
+        _cardPool.push(card);
+    });
 }
 
 function getBiggestManaCostFromCardPool(){    
