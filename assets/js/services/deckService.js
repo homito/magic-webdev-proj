@@ -78,7 +78,15 @@ function filterCards(cards, search, types){
 }
 
 function filterCardsByType(cards, types){
-
+    let filteredCards = [];
+    for (card in cards) {
+        for (type in types) {
+            if (cards[card].type_line.includes(types[type])){
+                filteredCards.push(cards[card]);
+            }
+        }
+    }
+    return filteredCards;
 }
 
 function filterCardsBySearch(cards, search){
