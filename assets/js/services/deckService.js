@@ -82,7 +82,15 @@ function filterCardsByType(cards, types){
 }
 
 function filterCardsBySearch(cards, search){
+    // search text within name, rarity, full type_line, oracle text
+    let filteredCards = [];
+    for (card in cards){
+        if (cards[card].name.includes(search) || cards[card].rarity.includes(search) || cards[card].type_line.includes(search) || cards[card].card_face.oracle_text.includes(search)){
+            filteredCards.push(cards[card]);
+        }
+    }
 
+    return filteredCards;
 }
 
 
