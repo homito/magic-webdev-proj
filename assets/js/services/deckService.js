@@ -74,7 +74,7 @@ function getManasCount(){
 }
 
 function filterCards(cards, search, types){
-    
+    return filterCardsBySearch(filterCardsByType(cards, types), search);
 }
 
 function filterCardsByType(cards, types){
