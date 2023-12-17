@@ -62,19 +62,13 @@ function displayBooster(set) {
     const ul = document.querySelector('#openedBooster');
     ul.innerHTML = '';
 
-    let dynamicHTML = '';
     for (let cardIndex = 0; cardIndex < set.length; cardIndex++) {
         const card = findCardById(set[cardIndex]);
-        dynamicHTML += `
-        <li><img class="card"
-        src="${card.image}"
-        alt="${card.name}" title="${card.name}"
-        data-id="${card.id}"
-        data-sequence-id="${cardIndex}">
-        </li>
-        `;
+        const li = document.createElement('li');
+        li.innerHTML = displayCard(card);
+        li.setAttribute('data-sequence-id', cardIndex);
+        ul.appendChild(li);
     }
-    ul.insertAdjacentHTML('beforeend', dynamicHTML);
 }
 
 function finishBooster() {
