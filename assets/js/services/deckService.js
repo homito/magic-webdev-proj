@@ -153,6 +153,9 @@ function getManasCount(){
                     case 'G':
                         manas.green++;
                         break;
+                    case 'A':
+                        manas.colorless++;
+                        break;
                 }
             });
         }
