@@ -100,3 +100,7 @@ function findCardInAllCardsById(id){
     }
     return null;
 }
+
+function nbCards() {
+    return _cards.length;
+}
