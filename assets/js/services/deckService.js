@@ -62,6 +62,8 @@ function moveCardFromPoolToDeck(cardId){
     for(card in _cardPool) {
         if (_cardPool[card].id === cardId){
             _deck.push(_cardPool[card]);
+            if (_cardPool[card].type_line.includes('Basic Land'))
+                return;
             _cardPool.splice(card, 1);
             return;
         }
@@ -72,8 +74,11 @@ function moveCardFromPoolToDeck(cardId){
 function moveCardFromDeckToPool(cardId){
     for(card in _deck) {
         if (_deck[card].id === cardId){
+            console.log(_deck[card]);
+            if (_deck[card].type_line.includes('Basic Land')) {
+                return;
+            }
             _cardPool.push(_deck[card]);
-            _deck.splice(card, 1);
             return;
         }
     }    
