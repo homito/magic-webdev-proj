@@ -3,6 +3,10 @@ let _search = '';
 
 function initDeckbuildingPage(){
     document.querySelector('#search-pool').addEventListener('input', searchFilter);
+    let mana = document.querySelectorAll('button.mana');
+    mana.forEach((button) => {
+        button.addEventListener('click', typeFilter);
+    });
 
     const section = document.querySelector('#deck-building');
     navigateToPage(section);
