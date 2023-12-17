@@ -7,6 +7,13 @@ let _deck = [];
 
 // Retrieves a sorted list of cards from the card pool, filtered by a search string and types.
 function getFilteredCardPool(search, types){
+    if (search === '' && types.length === 0)
+        return _cardPool;
+    else if (search === '')
+        return filterCardsByType(_cardPool, types);
+    else if (types.length === 0)
+        return filterCardsBySearch(_cardPool, search);
+    else
     return filterCards(_cardPool, search, types);
 }
 
