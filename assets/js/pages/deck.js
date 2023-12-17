@@ -72,8 +72,6 @@ function hoverCard(e){
     const errorMessages = [];
 
     document.querySelector('.card-detail img').src = e.target.currentSrc;
-    console.log(e.target.currentSrc);
-
 }
 
 function searchFilterInPool(e) {
