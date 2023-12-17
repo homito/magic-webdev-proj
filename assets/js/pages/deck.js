@@ -7,6 +7,7 @@ function initDeckbuildingPage(){
     const section = document.querySelector('#deck-building');
     navigateToPage(section);
 
+    addCardsToCardPool(getCards());
     renderCardPool();
 }
 
