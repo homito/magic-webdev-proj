@@ -111,7 +111,43 @@ function getNoneCreatureNoneLandCount(){
 
 // Counts the occurrence of each mana type in the deck.
 function getManasCount(){
-    
+    let manas = {
+        white: 0,
+        blue: 0,
+        black: 0,
+        red: 0,
+        green: 0,
+        colorless: 0
+    };
+
+    _deck.forEach(card => {
+        if (card.colors.length === 0){
+            manas.colorless++;
+        }
+        else {
+            card.colors.forEach(color => {
+                switch (color) {
+                    case 'W':
+                        manas.white++;
+                        break;
+                    case 'U':
+                        manas.blue++;
+                        break;
+                    case 'B':
+                        manas.black++;
+                        break;
+                    case 'R':
+                        manas.red++;
+                        break;
+                    case 'G':
+                        manas.green++;
+                        break;
+                }
+            });
+        }
+    });
+
+    return manas;
 }
 
 function filterCards(cards, search, types){
@@ -152,3 +188,14 @@ function filterCardsBySearch(cards, search){
 
 
 // ## YOUR ADDED FUNCTIONS ##
+function getManasCountPercentages() {
+    let manas = getManasCount();
+    let total = manas.white + manas.blue + manas.black + manas.red + manas.green + manas.colorless;
+    manas.white = Math.round(manas.white / total * 100);
+    manas.blue = Math.round(manas.blue / total * 100);
+    manas.black = Math.round(manas.black / total * 100);
+    manas.red = Math.round(manas.red / total * 100);
+    manas.green = Math.round(manas.green / total * 100);
+    manas.colorless = Math.round(manas.colorless / total * 100);
+    return manas;
+}
