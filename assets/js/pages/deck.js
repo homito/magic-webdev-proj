@@ -20,6 +20,7 @@ function initDeckbuildingPage(){
 
     addCardsToCardPool(getCards());
     renderCardPool();
+    renderDeck();
 }
 
 function renderCardPool(){
@@ -40,13 +41,32 @@ function renderCardPool(){
     cardImg.forEach((card) => {
         card.addEventListener('mouseover', showCardDetail);
     });
+    cardImg.forEach((card) => {
+        card.addEventListener('dblclick', moveCardToDeck);
+    });
 
     //display the nb of cards in the pool
     document.querySelector('h3').innerHTML = `Card pool ${cards.length}`;
 }
 
 function renderDeck(){
+    const deck = getDeck();
 
+    const zones = document.querySelectorAll('.deck ul');
+    for (zone in zones) {
+        zones[zone].innerHTML = '';
+    }
+    for (card in deck) {
+        const li = document.createElement('li');
+        li.innerHTML = displayCard(deck[card]);
+        li.setAttribute('data-sequence-id', 'undefined');
+        zones[deck[card].cmc].appendChild(li);
+    }
+
+    let cardImg = document.querySelectorAll('.deck .card');
+    cardImg.forEach((card) => {
+        card.addEventListener('dblclick', moveCardToPool);
+    });
 }
 
 function renderDeckZones(){
