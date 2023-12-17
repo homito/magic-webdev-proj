@@ -166,17 +166,15 @@ function filterCards(cards, search, types){
 }
 
 function filterCardsByType(cards, types){
-    // todo : fix this function, some cards are not displayed
     let filteredCards = [];
     for (card in cards) {
         let isOfType = false;
-        for (type in types) {
-            if (types[type] === '') {
-                if (cards[card].type_line.includes('Land'))
-                    isOfType = true;
-            }
-            else if (cards[card].type_line.includes(types[type])){
+        for (type in types) {            
+            if (cards[card].colors.includes(types[type]) && types[type] !== ''){
                 isOfType = true;
+            }
+            else if (cards[card].type_line.includes('Land') && types[type] === ''){
+                filteredCards.push(cards[card]);
             }
         }
         if (isOfType){
