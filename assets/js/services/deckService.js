@@ -189,6 +189,16 @@ function filterCardsBySearch(cards, search){
 
 // ## YOUR ADDED FUNCTIONS ##
 function getManasCountPercentages() {
+    if (_deck.length === 0)
+        return {
+            white: 0,
+            blue: 0,
+            black: 0,
+            red: 0,
+            green: 0,
+            colorless: 0
+        };
+        
     let manas = getManasCount();
     let total = manas.white + manas.blue + manas.black + manas.red + manas.green + manas.colorless;
     manas.white = Math.round(manas.white / total * 100);
