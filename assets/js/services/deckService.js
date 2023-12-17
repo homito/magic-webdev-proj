@@ -19,7 +19,7 @@ function getFilteredCardPool(search, types){
 function getFilteredDeck(search, types){
     if (search === '' || _deck.length === 0)
         return _deck;
-    return filterCardsBySearch(_deck, search);
+    return filterCards(_deck, search, types);
 }
 
 // Retrieves the complete deck.
