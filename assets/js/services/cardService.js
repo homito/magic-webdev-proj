@@ -76,3 +76,13 @@ function getBasicLands(){
 
 
 // ## YOUR ADDED FUNCTIONS ##
+function displayCard(card) {
+    let dynamicHTML = `
+    <img class="card"
+    src="${card.image}"
+    alt="${card.name}" title="${card.name}"
+    data-id="${card.id}">
+    `;
+    
+    return dynamicHTML;
+}
