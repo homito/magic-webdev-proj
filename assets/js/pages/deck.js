@@ -38,7 +38,7 @@ function renderCardPool(){
 
     let cardImg = document.querySelectorAll('.card-pool .card');
     cardImg.forEach((card) => {
-        card.addEventListener('mouseover', hoverCard);
+        card.addEventListener('mouseover', showCardDetail);
     });
 
     //display the nb of cards in the pool
@@ -54,7 +54,10 @@ function renderDeckZones(){
 }
 
 function showCardDetail(e){
+    e.preventDefault();
+    const errorMessages = [];
 
+    document.querySelector('.card-detail img').src = e.target.currentSrc;
 }
 
 function moveCardToDeck(e){
@@ -67,13 +70,6 @@ function moveCardToPool(e){
 
 
 // ## YOUR ADDED FUNCTIONS ##
-function hoverCard(e){
-    e.preventDefault();
-    const errorMessages = [];
-
-    document.querySelector('.card-detail img').src = e.target.currentSrc;
-}
-
 function searchFilterInPool(e) {
     e.preventDefault();
     const errorMessages = [];
