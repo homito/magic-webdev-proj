@@ -3,6 +3,7 @@ let _searchPool = '';
 
 function initDeckbuildingPage(){
     document.querySelector('#search-pool').addEventListener('input', searchFilterInPool);
+    document.querySelector('#search-deck').addEventListener('input', searchFilterInDeck);
     let mana = document.querySelectorAll('button.mana');
     mana.forEach((button) => {
         button.addEventListener('click', typeFilterInPool);
@@ -78,4 +79,29 @@ function typeFilterInPool(e) {
     }
 
     renderCardPool();
+}
+
+function searchFilterInDeck(e) {
+    e.preventDefault();
+    const errorMessages = [];
+
+    _searchDeck = e.target.value;
+
+    renderDeck();
+}
+
+function typeFilterInDeck(e) {
+    e.preventDefault();
+    const errorMessages = [];
+
+    const target = e.target;
+
+    if (target.classList.value.includes('selected')) {
+        target.classList.remove('selected');
+    }
+    else {
+        target.classList.add('selected');
+    }
+
+    renderDeck();
 }
