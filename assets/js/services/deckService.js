@@ -7,12 +7,10 @@ let _deck = [];
 
 // Retrieves a sorted list of cards from the card pool, filtered by a search string and types.
 function getFilteredCardPool(search, types){
-    if (search === '' && types.length === 0)
-        return _cardPool;
+    if (types.length === 0) 
+        return [];
     else if (search === '')
         return filterCardsByType(_cardPool, types);
-    else if (types.length === 0)
-        return filterCardsBySearch(_cardPool, search);
     else
         return filterCards(_cardPool, search, types);
 }
@@ -87,7 +85,7 @@ function getManasCount(){
 }
 
 function filterCards(cards, search, types){
-    return filterCardsBySearch(filterCardsByType(cards, types), search);
+    return filterCardsByType(filterCardsBySearch(cards, search), types);
 }
 
 function filterCardsByType(cards, types){
