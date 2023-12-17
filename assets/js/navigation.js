@@ -23,6 +23,15 @@ function navigate(e){
         finishBooster();
         initDeckbuildingPage();
     }
+    else if(target.id === 'deck-building' && target.dataset.target === 'stats') {
+        initStatsPage();
+    }
+    else if(target.id === 'deck-building' && target.dataset.target === 'thanks') {
+        initThankYouPage();
+    }
+    else if(target.id === 'stats') {
+        initDeckbuildingPage();
+    }
 }
 
 function navigateToPage(targetId){
