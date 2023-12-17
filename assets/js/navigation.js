@@ -11,7 +11,7 @@ function navigate(e){
     const errorMessages = [];
     const target = e.target;
     
-    if(target.tagName === 'FORM') { // todo : check if input is valid
+    if(target.tagName === 'FORM') {
         const targetData = new FormData(target);
         subscriptionData = targetData;
         initBoosters(targetData.get('booster'));
