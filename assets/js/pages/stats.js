@@ -7,6 +7,7 @@ function initStatsPage(){
     navigateToPage(section);
 
     displayOverview();
+    displayCardsPerColor();
 }
 
 
