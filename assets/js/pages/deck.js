@@ -52,6 +52,9 @@ function moveCardToPool(e){
 
 // ## YOUR ADDED FUNCTIONS ##
 function searchFilter(e) {
+    e.preventDefault();
+    const errorMessages = [];
+
     _search = e.target.value;
 
     renderCardPool();
