@@ -36,6 +36,11 @@ function renderCardPool(){
         ul.appendChild(li);
     }
 
+    let cardImg = document.querySelectorAll('.card-pool .card');
+    cardImg.forEach((card) => {
+        card.addEventListener('mouseover', hoverCard);
+    });
+
     //display the nb of cards in the pool
     document.querySelector('h3').innerHTML = `Card pool ${cards.length}`;
 }
@@ -62,6 +67,15 @@ function moveCardToPool(e){
 
 
 // ## YOUR ADDED FUNCTIONS ##
+function hoverCard(e){
+    e.preventDefault();
+    const errorMessages = [];
+
+    document.querySelector('.card-detail img').src = e.target.currentSrc;
+    console.log(e.target.currentSrc);
+
+}
+
 function searchFilterInPool(e) {
     e.preventDefault();
     const errorMessages = [];
