@@ -8,6 +8,10 @@ function initDeckbuildingPage(){
     manaPool.forEach((button) => {
         button.addEventListener('click', typeFilterInPool);
     });
+    let manaDeck = document.querySelectorAll('.deck button.mana');
+    manaDeck.forEach((button) => {
+        button.addEventListener('click', typeFilterInDeck);
+    });
 
     const section = document.querySelector('#deck-building');
     navigateToPage(section);
