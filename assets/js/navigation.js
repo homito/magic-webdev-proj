@@ -51,6 +51,10 @@ function showPage(sectionId){
     sectionId.classList.remove('hidden');
 }
 
+function hidePages(sections){
+    sections.forEach(section => hidePage(section));    
+}
+
 function hidePage(sectionId){
     sectionId.classList.add('hidden');
 }
