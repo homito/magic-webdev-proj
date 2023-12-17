@@ -56,3 +56,17 @@ function searchFilter(e) {
 
     renderCardPool();
 }
+
+function typeFilter(e) {
+    e.preventDefault();
+    const errorMessages = [];
+
+    const target = e.target;
+
+    if (target.classList.value.includes('selected')) {
+        target.classList.remove('selected');
+    }
+    else {
+        target.classList.add('selected');
+    }
+}
