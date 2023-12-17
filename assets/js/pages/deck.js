@@ -1,6 +1,8 @@
 // ## GIVEN ##
 
 function initDeckbuildingPage(){
+    document.querySelector('#search-pool').addEventListener('input', searchFilter);
+
     const section = document.querySelector('#deck-building');
     navigateToPage(section);
 
@@ -47,3 +49,6 @@ function moveCardToPool(e){
 
 
 // ## YOUR ADDED FUNCTIONS ##
+function searchFilter(e) {
+    console.log(e.target.value);
+}
