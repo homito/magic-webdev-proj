@@ -22,7 +22,7 @@ function getDeck(){
 
 // Retrieves the complete CardPool.
 function getCardPool(){
-
+    return _cardPool;
 }
 
  
