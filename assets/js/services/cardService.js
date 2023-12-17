@@ -18,7 +18,11 @@ function loadSet(set){
 
 // Retrieves the current list of cards stored in _cards.
 function getCards(){
-    
+    let cards = [];
+    for (card in _cards) {
+        cards.push(findCardById(_cards[card]));
+    }
+    return cards;
 }
 
 // Searches for a card by its ID in the _cards array. If found, returns the card object; otherwise, returns null.
