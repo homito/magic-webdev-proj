@@ -93,10 +93,14 @@ function filterCards(cards, search, types){
 function filterCardsByType(cards, types){
     let filteredCards = [];
     for (card in cards) {
+        let isOfType = false;
         for (type in types) {
             if (cards[card].type_line.includes(types[type])){
-                filteredCards.push(cards[card]);
+                isOfType = true;
             }
+        }
+        if (isOfType){
+            filteredCards.push(cards[card]);
         }
     }
     return filteredCards;
