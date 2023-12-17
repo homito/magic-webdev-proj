@@ -29,7 +29,7 @@ function renderCardPool(){
     const ul = document.querySelector('.container.cards.scrollable');
     ul.innerHTML = '';
     
-    //NOT FINAL
+
     let cards = getFilteredCardPool(_searchPool, _typesPool); 
     for (card in cards) {
         const li = document.createElement('li');
@@ -37,7 +37,6 @@ function renderCardPool(){
         li.setAttribute('data-sequence-id', card);
         ul.appendChild(li);
     }
-    //NOT FINAL
 }
 
 function renderDeck(){
