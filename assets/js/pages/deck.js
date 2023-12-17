@@ -1,4 +1,6 @@
 let _searchPool = '';
+let _typesPool = config.mana_types;
+
 // ## GIVEN ##
 
 function initDeckbuildingPage(){
@@ -28,7 +30,7 @@ function renderCardPool(){
     ul.innerHTML = '';
     
     //NOT FINAL
-    let cards = getFilteredCardPool(_searchPool, _types); 
+    let cards = getFilteredCardPool(_searchPool, _typesPool); 
     for (card in cards) {
         const li = document.createElement('li');
         li.innerHTML = displayCard(cards[card]);
@@ -77,9 +79,11 @@ function typeFilterInPool(e) {
 
     if (target.classList.value.includes('selected')) {
         target.classList.remove('selected');
+        _typesPool.splice(_typesPool.indexOf(target.dataset.mana), 1);
     }
     else {
         target.classList.add('selected');
+        _typesPool.push(target.dataset.mana);        
     }
 
     renderCardPool();
