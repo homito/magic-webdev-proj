@@ -19,7 +19,7 @@ function renderCardPool(){
     ul.innerHTML = '';
     
     //NOT FINAL
-    let cards = getCards(); 
+    let cards = getFilteredCardPool(_search, _types); 
     for (card in cards) {
         const li = document.createElement('li');
         li.innerHTML = displayCard(cards[card]);
